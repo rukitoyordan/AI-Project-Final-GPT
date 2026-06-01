@@ -35,9 +35,22 @@ class Transformer_Block(nn.Module):
 
     def forward(self, x):
         """YOUR CODE HERE"""
-        x = self.norm_1(x + self.attn_block(x))
-        x = self.norm_2(x + F.relu(self.linear_1(x)))
-        return x
+        '''Step 1: Self-attention'''
+        attn_out = self.attn_block(x)
+        '''Step 2: Residual add/connection'''
+        x2 = attn_out + x
+        '''Step 3: Layer normalization'''
+        x3 = self.norm_1(x2)
+        '''Step 4: Feed forward + ReLU'''
+        ff_out = torch.relu(self.linear_1(x3))
+        '''Step 5: Residual add/connection'''
+        x5 = ff_out + x3
+        '''Step 6: Layer normalization'''
+        return self.norm_2(x5)
+    
+        # x = self.norm_1(x + self.attn_block(x))
+        # x = self.norm_2(x + F.relu(self.linear_1(x)))
+        # return x
        
 
 class Character_GPT(nn.Module):
