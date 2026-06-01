@@ -10,13 +10,19 @@ This project implements a programming component called a Transformer.
 - Extend the Transformer to solve a real problem and analyze what was built.
 
 ## Create .venv
-1. Install Pythorch
-'''pip install torch torchvision torchaudio'''
+1. Install pytorch, numpy, and matplotlib (Source: Berkeley AI Course)
+```
+pip install torch torchvision torchaudio
+pip install numpy
+pip install matplotlib
+```
 
 ## models.py
-'''python models1.py'''
+```python models1.py```
 
 ## gpt_model.py
-'''python gpt_model.py'''
+```python gpt_model.py```
+
+
 
 
