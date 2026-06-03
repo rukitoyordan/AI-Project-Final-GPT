@@ -23,6 +23,9 @@ pip install matplotlib
 ## gpt_model.py
 ```python gpt_model.py```
 
+## train_gpt.py
+```python train_gpt.py```
+
 # References:
 1) "minGPT" and "nanoGPT" implemented by Andrej Karpathy
 https://github.com/karpathy/minGPT
