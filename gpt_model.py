@@ -17,7 +17,7 @@ https://github.com/huggingface/transformers/blob/main/src/transformers/models/gp
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from models import Attention
+from models import AttentionBlock as Attention
 
 
 class Transformer_Block(nn.Module):
@@ -27,7 +27,7 @@ class Transformer_Block(nn.Module):
     def __init__(self, n_embd, block_size):
         super().__init__()
 
-        self.attn_block = Attention(n_embd, block_size)
+        self.attn_block = Attention(n_embd)
         self.norm_1 = nn.LayerNorm(n_embd)
         self.linear_1 = nn.Linear(n_embd, n_embd)
         self.norm_2 = nn.LayerNorm(n_embd)
