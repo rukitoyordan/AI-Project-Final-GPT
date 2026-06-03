@@ -18,26 +18,26 @@ pip install matplotlib
 ```
 
 ## models.py
-```python models1.py```
+```
+python models1.py
+```
 
 ## gpt_model.py
-```python gpt_model.py```
+```
+python gpt_model.py
+```
 
 ## train_gpt.py
-```python train_gpt.py```
+```
+python train_gpt.py
+```
 
 # References:
-1) "minGPT" and "nanoGPT" implemented by Andrej Karpathy
-https://github.com/karpathy/minGPT
-https://github.com/karpathy/nanoGPT/blob/master/data/shakespeare_char/prepare.py
-2) the official GPT-2 TensorFlow implementation released by OpenAI:
-https://github.com/openai/gpt-2/blob/master/src/model.py
-3) huggingface/transformers PyTorch implementation:
-https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py
-4) Berkeley AI course project
-https://inst.eecs.berkeley.edu/~cs188/archive/sp25/projects/proj5/
-5) “Attention Is All You Need” (Vaswani et al.) 
-https://arxiv.org/abs/1706.03762
-
+1) ["minGPT" implemented by Andrej Karpathy](https://github.com/karpathy/minGPT)
+2) ["nanoGPT" implemented by Andrej Karpathy](https://github.com/karpathy/nanoGPT/blob/master/data/shakespeare_char/prepare.py)
+3) [the official GPT-2 TensorFlow implementation released by OpenAI](https://github.com/openai/gpt-2/blob/master/src/model.py)
+4) [huggingface/transformers PyTorch implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
+5) [Berkeley AI course project](https://inst.eecs.berkeley.edu/~cs188/archive/sp25/projects/proj5/)
+6) [“Attention Is All You Need” (Vaswani et al.) Submitted on 12 Jun 2017 (v1), last revised 2 Aug 2023 (this version, v7)](https://arxiv.org/abs/1706.03762)
 
 
