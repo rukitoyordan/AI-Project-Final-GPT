@@ -24,8 +24,9 @@ pip install matplotlib
 ```python gpt_model.py```
 
 # References:
-1) "minGPT" implemented by Andrej Karpathy
+1) "minGPT" and "nanoGPT" implemented by Andrej Karpathy
 https://github.com/karpathy/minGPT
+https://github.com/karpathy/nanoGPT/blob/master/data/shakespeare_char/prepare.py
 2) the official GPT-2 TensorFlow implementation released by OpenAI:
 https://github.com/openai/gpt-2/blob/master/src/model.py
 3) huggingface/transformers PyTorch implementation:
