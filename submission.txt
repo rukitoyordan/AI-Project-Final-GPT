@@ -1,0 +1,221 @@
+FINAL SUBMISSION
+- Fabian A. Perez Munoz
+CIIC5015-096
+
+Input Text: The Rise of Kyoshi by F.C. Yee (2019) 
+Word Count: 117,564
+Character Count: 660,342
+
+Extract: F. C. Yee’s The Rise of Kyoshi delves into the story of Kyoshi, the Earth Kingdom–born Avatar. The longest-living Avatar in this beloved world’s history, Kyoshi established the brave and respected Kyoshi Warriors, but also founded the secretive Dai Li, which led to the corruption, decline, and fall of her own nation. The first of two novels based on Kyoshi, The Rise of Kyoshi maps her journey from a girl of humble origins to the merciless pursuer of justice who is still feared and admired centuries after she became the Avatar.
+
+Why did I choose the corpus of Avatar Kyoshi?
+
+Escogi una adaptacion historica de la novela "The Rise of Kyoshi" ya que es parte 
+de una de mis series favoritas animadas llamada "Avatar: The Last Airbender". 
+Esta novela abarca mucho en conceptos de la serie que no aparece en la television, 
+sino que simplemente abunda en la historia de un personaje extremadamente importante 
+que es ancestro del 'Avatar'. Quise ver como el modelo entrenaba de manera 
+que pudiera entender palabras relacionadas a magia y a la vez rendir fruto a 
+las descripciones de paisajes de este texto.
+
+Observed Changes for larger values of N_LAYERS, LAYER_SIZE, or
+MAX_ITERS:
+
+En resumen, el aumentar los N_LAYERS, ayudo a mejorar como tal el flujo de palabras 
+y syntax pero comosea tuvo muchos errores ortograficos, problemas en actualmente 
+entender las palabras, pero si el desplazo de la gramatica. Al aumentar el LAYER_SIZE, 
+puede tener mejor memoria en reconocer palabras frecuentes (como Kyoshi, la protagonista)
+o terminologia de fantasia/conjunciones. Finalmente, al aumentar las iteraciones, 
+aunque causa que el modelo se tarde mucho mas en entrenar, si demostro reconocer casi 
+oraciones completas de muestras en parrafos. 
+
+-------- Training #1: Base -------- 
+'''Hyperparameters'''
+BLOCK_SIZE = 64
+LAYER_SIZE = 64
+N_LAYERS = 2
+LEARNING_RATE = 3e-4
+MAX_ITERS = 3000
+BATCH_SIZE = 32
+-----------------------------------
+
+Last 10 lines Training Loss Table:
+
+Iteration/Step  300 | Loss: 2.5407
+Iteration/Step  600 | Loss: 2.4612
+Iteration/Step  900 | Loss: 2.3873
+Iteration/Step 1200 | Loss: 2.3055
+Iteration/Step 1500 | Loss: 2.3395
+Iteration/Step 1800 | Loss: 2.3341
+Iteration/Step 2100 | Loss: 2.3772
+Iteration/Step 2400 | Loss: 2.2730
+Iteration/Step 2700 | Loss: 2.3397
+Iteration/Step 2999 | Loss: 2.3240
+
+Text Sample: 
+erty touw wndos was stofo k’thews?”
+Bork fas, poororli Heralypele Lus tst.
+Thengier s aneabubestunailost. h tin wad d the iveminghen’tsn mang waly. We Thereras the zhars wagiou’t ng at.
+Herer nd cristhoffat n toure i
+
+cre hangershindiowing myoure g ng, by. pathe cely heshenthry be sutre adore or leliticikissped erad h nssenge fenthe. Ay yoas githe thacag ars tou at hee thee nchemengimin drthe then’dngly cheraver perele’t tthest wain res opalame cedesttougefr w
+sthirfled f s wasasarsinds boot, ma
+
+Attempt #1
+Final Loss: 2.3240
+Attempt #2
+Final Loss: 2.3047
+Attempt #3
+Final Loss: 2.3243
+
+Observaciones: Se pudo observar que el modelo entrenado en menos de 2 mins pudo dividir palabras, 
+entender puntuacion, preguntas y citaciones internas. Sin embargo, el modelo no pudo extraer mucho 
+en el sentido de las palabras debido al corto tiempo de entrenamiento, resultando en un loss mas alto.
+
+-------- Training #2: Added 10+ Layers -------- 
+'''Hyperparameters'''
+BLOCK_SIZE = 64
+LAYER_SIZE = 64
+N_LAYERS = 12 **
+LEARNING_RATE = 3e-4
+MAX_ITERS = 3000
+BATCH_SIZE = 32
+-----------------------------------
+
+Last 10 lines Training Loss Table:
+
+Iteration/Step  300 | Loss: 2.4621
+Iteration/Step  600 | Loss: 2.3420
+Iteration/Step  900 | Loss: 2.1997
+Iteration/Step 1200 | Loss: 2.1362
+Iteration/Step 1500 | Loss: 1.9892
+Iteration/Step 1800 | Loss: 1.9807
+Iteration/Step 2100 | Loss: 1.8902
+Iteration/Step 2400 | Loss: 1.8139
+Iteration/Step 2700 | Loss: 1.8531
+Iteration/Step 2999 | Loss: 1.8516
+
+Text Sample: 
+Del light.
+“Deyerir was and moring, Kyoshi beeen her steres of ofok by the, stoorf the vurky’s down theh what tal a the Bugho bouckud thout. The puicked.
+But sthe, her buned Aven mote to cuples-Ran, Kyoshi’d praredd cotther Eand piters. “It on off aming ha we the SThe sat dee her thadgbes, aste hisce renk boozh from the didy cople. Clith though for who have na off in pastincay and a the Gargwion,” Kyoshi sactlacted shout wersed.
+Itt’t gott
+grick, it the Pengngess back, courns on whis illing that
+
+Attempt #1
+Final Loss: 1.8516
+Attempt #2
+Final Loss: 1.9076
+Attempt #3
+Final Loss: 1.8696
+
+Observaciones: En esta interaccion, se pudo bajar el loss a 1.85 y 
+al mirar el texto se puede apreciar que pudo reconocer algunas palabras, 
+incluyendo Kyoshi, el nombre de la protagonista. Se puede ver ue hubo 
+mejor estructura de datos al aumentar los layers. Este entrenamiento duro alrededor de 4 minutos.
+
+-------- Training #3: Added 300+ Layer Size -------- 
+'''Hyperparameters'''
+BLOCK_SIZE = 64
+LAYER_SIZE = 364 ***
+N_LAYERS = 12 **
+LEARNING_RATE = 3e-4
+MAX_ITERS = 3000
+BATCH_SIZE = 32
+-----------------------------------
+
+Last 10 lines Training Loss Table:
+Iteration/Step  300 | Loss: 2.1219
+Iteration/Step  600 | Loss: 1.8334
+Iteration/Step  900 | Loss: 1.6320
+Iteration/Step 1200 | Loss: 1.6001
+Iteration/Step 1500 | Loss: 1.5315
+Iteration/Step 1800 | Loss: 1.4865
+Iteration/Step 2100 | Loss: 1.5801
+Iteration/Step 2400 | Loss: 1.4694
+Iteration/Step 2700 | Loss: 1.4030
+Iteration/Step 2999 | Loss: 1.4046
+
+Text Sample: 
+B
+Jianzhus something like a goon only, didnes it woody because that way.”
+After imagine her hchelt, he fushed even scilency over the boy ridittched divatance of botherhe he’d hundermanded himself bring in the friends.
+And the kittcoled what he girl full pank beformater poles has chumed her render whosed on his head. It hands and killed we becambras, she was greentter all water the anumolinated chacce and knowledes lightered edguard, the ledit musist steeping in the grounds acrost a plains as pal
+
+Attempt #1
+Final Loss: 1.4046
+
+Observaciones: Duracion aproximada de 7 minutos. Se puede observar que ahora si se generan mas palabras existentes y se puede hacer mas sentido aunque hay palabras incorrectas. 
+
+-------- Training #3: Added 7000 Max Iterations -------- 
+'''Hyperparameters'''
+BLOCK_SIZE = 64
+LAYER_SIZE = 364 ***
+N_LAYERS = 12 **
+LEARNING_RATE = 3e-4
+MAX_ITERS = 7000 ****
+BATCH_SIZE = 32
+-----------------------------------
+
+Last 10 lines Training Loss Table:
+Iteration/Step 4500 | Loss: 1.3421
+Iteration/Step 4800 | Loss: 1.3205
+Iteration/Step 5100 | Loss: 1.3234
+Iteration/Step 5400 | Loss: 1.3404
+Iteration/Step 5700 | Loss: 1.3179
+Iteration/Step 6000 | Loss: 1.2767
+Iteration/Step 6300 | Loss: 1.3274
+Iteration/Step 6600 | Loss: 1.3206
+Iteration/Step 6900 | Loss: 1.2618
+Iteration/Step 6999 | Loss: 1.2290
+
+Text Sample: 
+face but her fant the Sakus Wich Kyoshi didn’t first like Mure where years a died happily heard / the Avatar we loud. Buffor I’m holdn’t follow it very given up loosing slipp through the Mok forming as a check fire. StiturS
+as too glow arm and shagll throws were Xu clapsed.
+Kyoshi knew hadn’t shuder it was loots of time.
+He heard the tablat so as chance Kuruk fell misside her eyes were in the pilliss? Earth King’s pay off you from the polical against as they’d ben out by her back on her down oft
+
+Attempt #1
+Final Loss: 1.2290
+
+Observaciones: Duracion aproximada de 19 mins. Al aumentar la cantidad de iteraciones, aumento sigificativamente el tiempo de entrenamiento. Tambien hubo un poco de fluctuacion en las perdidas (loss) pero bajo significativamente desde la primera iteracion.
+
+BLOCK_SIZE = 64
+LAYER_SIZE = 600
+N_LAYERS = 12
+LEARNING_RATE = 3e-4
+MAX_ITERS = 12000
+BATCH_SIZE = 32
+
+-------- Training #4: Added 12000 Max Iterations & 600 Layer Size -------- 
+'''Hyperparameters'''
+BLOCK_SIZE = 64
+LAYER_SIZE = 600 ***
+N_LAYERS = 12 **
+LEARNING_RATE = 3e-4
+MAX_ITERS = 12000 ****
+BATCH_SIZE = 32
+-----------------------------------
+
+Last 10 lines Training Loss Table:
+Iteration/Step 9300 | Loss: 1.0741
+Iteration/Step 9600 | Loss: 1.0667
+Iteration/Step 9900 | Loss: 0.9839
+Iteration/Step 10200 | Loss: 0.9983
+Iteration/Step 10500 | Loss: 1.0185
+Iteration/Step 10800 | Loss: 0.9561
+Iteration/Step 11100 | Loss: 0.9281
+Iteration/Step 11400 | Loss: 0.9219
+Iteration/Step 11700 | Loss: 0.9372
+Iteration/Step 11999 | Loss: 0.9573
+
+Text Sample: 
+I let you went that gave Jianzhu for the table.
+“Fine, sincer,” Hei-Ran said in the erge of extra bending lightning to go jumping Te had lost her waist in doubt.
+“Rangi, where aswe sort loud of money town around a pattement. The man slorg war that prominent nails haun’s no longer than the important. “We’ll get the better-leveraged gues over his own each me. It’s the most pliting as a what we forever.”
+“Oh, I come on, hand coulous. And I look right for whatever Yun didn’t fose the mames the only 
+
+Attempt #1
+Final Loss: 0.9573
+
+Observaciones: Duracion de 52 mins, al aumentar significativamente las iteraciones y layer size, se observo un loss menor de 1.00 lo cual obtuvo resultados impresionantes mediante que se puede entender el texto casi completamente con pequenos errores entre 1-2 palabras por oracion.
