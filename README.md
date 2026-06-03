@@ -1,5 +1,6 @@
-# AI-Project-Final-GPT
-# Fabián Perez Munoz 
+# AI Project Final Char-Level GPT
+## Fabián Perez Munoz 
+## CIIC5015-096 (UPRM)
 
 # FINAL PROJECT – Scaled Dot-Product Attention with Character-Level GPT
 
@@ -39,5 +40,6 @@ python train_gpt.py
 4) [huggingface/transformers PyTorch implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
 5) [Berkeley AI course project](https://inst.eecs.berkeley.edu/~cs188/archive/sp25/projects/proj5/)
 6) [“Attention Is All You Need” (Vaswani et al.) Submitted on 12 Jun 2017 (v1), last revised 2 Aug 2023 (this version, v7)](https://arxiv.org/abs/1706.03762)
+7) [Avatar: The Last Airbender: The Rise of Kyoshi (Chronicles of the Avatar Book 1 by F.C. Yee, 2019)(ISBN: 978-1683355335)](https://archive.org/details/avatar-the-last-airbender-the-f.-c.-yee/mode/2up)
 
 
