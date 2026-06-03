@@ -6,15 +6,19 @@ Input Text: The Rise of Kyoshi by F.C. Yee (2019)
 Word Count: 117,564
 Character Count: 660,342
 
-Extract: F. C. Yee’s The Rise of Kyoshi delves into the story of Kyoshi, the Earth Kingdom–born Avatar. The longest-living Avatar in this beloved world’s history, Kyoshi established the brave and respected Kyoshi Warriors, but also founded the secretive Dai Li, which led to the corruption, decline, and fall of her own nation. The first of two novels based on Kyoshi, The Rise of Kyoshi maps her journey from a girl of humble origins to the merciless pursuer of justice who is still feared and admired centuries after she became the Avatar.
+Extract: F. C. Yee’s The Rise of Kyoshi delves into the story of Kyoshi, the Earth Kingdom–born Avatar. 
+The longest-living Avatar in this beloved world’s history, Kyoshi established the brave and respected Kyoshi Warriors, 
+but also founded the secretive Dai Li, which led to the corruption, decline, and fall of her own nation. 
+The first of two novels based on Kyoshi, The Rise of Kyoshi maps her journey from a girl of humble origins to the merciless 
+pursuer of justice who is still feared and admired centuries after she became the Avatar.
 
 Why did I choose the corpus of Avatar Kyoshi?
 
-Escogi una adaptacion historica de la novela "The Rise of Kyoshi" ya que es parte 
+Escogí una adaptación histórica de la novela "The Rise of Kyoshi" ya que es parte 
 de una de mis series favoritas animadas llamada "Avatar: The Last Airbender". 
-Esta novela abarca mucho en conceptos de la serie que no aparece en la television, 
+Esta novela abarca mucho en conceptos de la serie que no aparece en la televisión, 
 sino que simplemente abunda en la historia de un personaje extremadamente importante 
-que es ancestro del 'Avatar'. Quise ver como el modelo entrenaba de manera 
+que es ancestro del 'Avatar'. Quise ver cómo el modelo entrenaba de manera 
 que pudiera entender palabras relacionadas a magia y a la vez rendir fruto a 
 las descripciones de paisajes de este texto.
 
@@ -24,10 +28,10 @@ MAX_ITERS:
 En resumen, el aumentar los N_LAYERS, ayudo a mejorar como tal el flujo de palabras 
 y syntax pero comosea tuvo muchos errores ortograficos, problemas en actualmente 
 entender las palabras, pero si el desplazo de la gramatica. Al aumentar el LAYER_SIZE, 
-puede tener mejor memoria en reconocer palabras frecuentes (como Kyoshi, la protagonista)
-o terminologia de fantasia/conjunciones. Finalmente, al aumentar las iteraciones, 
-aunque causa que el modelo se tarde mucho mas en entrenar, si demostro reconocer casi 
-oraciones completas de muestras en parrafos. 
+puede tener mejor memoria para reconocer palabras frecuentes (como Kyoshi, la protagonista)
+o terminología de fantasía/conjunciones. Finalmente, al aumentar las iteraciones, 
+aunque causa que el modelo se tarde mucho más en entrenar, sí demostró reconocer casi 
+oraciones completas de muestras en párrafos. 
 
 -------- Training #1: Base -------- 
 '''Hyperparameters'''
@@ -68,9 +72,9 @@ Final Loss: 2.3047
 Attempt #3
 Final Loss: 2.3243
 
-Observaciones: Se pudo observar que el modelo entrenado en menos de 2 mins pudo dividir palabras, 
-entender puntuacion, preguntas y citaciones internas. Sin embargo, el modelo no pudo extraer mucho 
-en el sentido de las palabras debido al corto tiempo de entrenamiento, resultando en un loss mas alto.
+Observaciones: Se pudo observar que el modelo entrenado en menos de 2 min pudo dividir palabras, 
+entender puntuación, preguntas y citaciones internas. Sin embargo, el modelo no pudo extraer mucho
+en el sentido de las palabras debido al corto tiempo de entrenamiento, resultando en una pérdida más alta.
 
 -------- Training #2: Added 10+ Layers -------- 
 '''Hyperparameters'''
@@ -109,10 +113,10 @@ Final Loss: 1.9076
 Attempt #3
 Final Loss: 1.8696
 
-Observaciones: En esta interaccion, se pudo bajar el loss a 1.85 y 
+Observaciones: En esta interacción, se pudo bajar el loss a 1.85 y 
 al mirar el texto se puede apreciar que pudo reconocer algunas palabras, 
-incluyendo Kyoshi, el nombre de la protagonista. Se puede ver ue hubo 
-mejor estructura de datos al aumentar los layers. Este entrenamiento duro alrededor de 4 minutos.
+incluyendo Kyoshi, el nombre de la protagonista. Se puede ver que hubo 
+mejor estructura de datos al aumentar los layers. Este entrenamiento duró alrededor de 4 minutos.
 
 -------- Training #3: Added 300+ Layer Size -------- 
 '''Hyperparameters'''
@@ -145,7 +149,7 @@ And the kittcoled what he girl full pank beformater poles has chumed her render 
 Attempt #1
 Final Loss: 1.4046
 
-Observaciones: Duracion aproximada de 7 minutos. Se puede observar que ahora si se generan mas palabras existentes y se puede hacer mas sentido aunque hay palabras incorrectas. 
+Observaciones: Duración aproximada de 7 minutos. Se puede observar que ahora sí se generan más palabras existentes y se puede hacer más sentido aunque hay palabras incorrectas. 
 
 -------- Training #3: Added 7000 Max Iterations -------- 
 '''Hyperparameters'''
@@ -178,7 +182,7 @@ He heard the tablat so as chance Kuruk fell misside her eyes were in the pilliss
 Attempt #1
 Final Loss: 1.2290
 
-Observaciones: Duracion aproximada de 19 mins. Al aumentar la cantidad de iteraciones, aumento sigificativamente el tiempo de entrenamiento. Tambien hubo un poco de fluctuacion en las perdidas (loss) pero bajo significativamente desde la primera iteracion.
+Observaciones: Duración aproximada de 19 min. Al aumentar la cantidad de iteraciones, aumentó significativamente el tiempo de entrenamiento. También hubo un poco de fluctuación en las pérdidas (loss), pero bajó significativamente desde la primera iteración.
 
 BLOCK_SIZE = 64
 LAYER_SIZE = 600
@@ -218,4 +222,4 @@ I let you went that gave Jianzhu for the table.
 Attempt #1
 Final Loss: 0.9573
 
-Observaciones: Duracion de 52 mins, al aumentar significativamente las iteraciones y layer size, se observo un loss menor de 1.00 lo cual obtuvo resultados impresionantes mediante que se puede entender el texto casi completamente con pequenos errores entre 1-2 palabras por oracion.
+Observaciones: Duración de 52 min, al aumentar significativamente las iteraciones y el layer size, se observó un loss menor que 1.00, lo cual obtuvo resultados impresionantes, mediante los cuales se puede entender el texto casi completamente, con pequeños errores de 1-2 palabras por oración.
